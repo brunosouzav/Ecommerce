@@ -1,10 +1,11 @@
 package com.ecommerce.fit.models;
 
 import java.time.Instant;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.ecommerce.fit.enums.OrderStatus;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "order")
+@Table(name = "tb_order")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -33,11 +34,17 @@ public class Order {
 	private OrderStatus orderStatus;
 
 	@ManyToOne
-	@JoinColumn(name = "client_id")
-	private User client;
-
-	@OneToMany(mappedBy = "id.order")
-	private Set<OrderItem> items = new HashSet<>();
+	@JoinColumn(name = "user_id")
+	private User user;
 	
+	
+	@OneToMany(mappedBy = "id.orderId")
+	private List<OrderItem> items = new ArrayList<>() ;
 
+	@JsonManagedReference
+	public List<OrderItem> getItems() {
+	    return items;
+	    }
+	
+	
 }

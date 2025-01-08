@@ -1,10 +1,16 @@
 package com.ecommerce.fit.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -34,4 +40,8 @@ public class User {
     @Column(name = "password",nullable = false)
     @Size(min = 6, max = 20, message = "A senha deve ter entre 6 e 20 caracteres.")
     private String password;
+    
+    @JsonIgnore
+	@OneToMany(mappedBy = "user")
+	private List<Order> orders = new ArrayList<>();
 }

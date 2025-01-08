@@ -1,11 +1,7 @@
 package com.ecommerce.fit.models.pk;
 
-import com.ecommerce.fit.models.Order;
-import com.ecommerce.fit.models.Product;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,14 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class OrderItemPK {
-
-	@ManyToOne
-	@JoinColumn(name = "order_id")
-	private Order order;
-
-	@ManyToOne
-	@JoinColumn(name = "product_id")
-	private Product product;
-
+	 
+	@Column(name = "order_id")
+	 private Long orderId;
+	
+	@Column(name = "product_id")
+	 private Long productId;
 	
 }
