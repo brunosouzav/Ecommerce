@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ecommerce.fit.exceptions.ProductNotFoundException;
+import com.ecommerce.fit.exceptions.ProductProblemException;
 import com.ecommerce.fit.models.Product;
 import com.ecommerce.fit.repositories.ProductRepository;
 
@@ -23,7 +23,7 @@ public class ProductService {
 
     public Product findById(Long id) {
         return productRepository.findById(id)
-                .orElseThrow(() -> new ProductNotFoundException("Product not found with ID: " + id));
+                .orElseThrow(() -> new ProductProblemException("Product not found with ID: " + id));
     }
 
     public Optional<Product> findByName(String name) {
@@ -32,7 +32,7 @@ public class ProductService {
 
     public void updateProduct(Long id, Product product) {
         Product existingProduct = productRepository.findById(id)
-                .orElseThrow(() -> new ProductNotFoundException("Product not found with ID: " + id));
+                .orElseThrow(() -> new ProductProblemException("Product not found with ID: " + id));
 
         if (product.getName() != null) {
             existingProduct.setName(product.getName());
@@ -49,7 +49,7 @@ public class ProductService {
 
     public void deleteProduct(Long id) {
         Product product = productRepository.findById(id)
-                .orElseThrow(() -> new ProductNotFoundException("Product not found with ID: " + id));
+                .orElseThrow(() -> new ProductProblemException("Product not found with ID: " + id));
 
         productRepository.delete(product);
     }

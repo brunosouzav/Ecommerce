@@ -1,11 +1,11 @@
 package com.ecommerce.fit.exceptions;
 
-public class ProductNotFoundException extends RuntimeException {
+public class ProductProblemException extends RuntimeException {
 
 	
 	private static final long serialVersionUID = 1L;
 
-	public ProductNotFoundException(String message) {
+	public ProductProblemException(String message) {
 		super(message);
 	}
 }
