@@ -16,7 +16,11 @@ public class ProductService {
 	
 	@Autowired
     private ProductRepository productRepository;
-
+	
+	public void createProduct(Product product) {
+		productRepository.save(product);
+	
+	}
     public List<Product> findAll() {
         return productRepository.findAll();
     }
