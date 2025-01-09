@@ -34,18 +34,6 @@ public class UserService {
 	        return user;
 	    }
 
-
-	public void updateUser(Long id, User user) {
-		User newUser = userRepository.findById(id)
-		.orElseThrow(() -> new UserProblemException("Usuario não encontrado"));
-
-		    
-		    if (user.getPassword() != null) {
-		        newUser.setPassword(user.getPassword());
-		    }
-		
-		userRepository.save(newUser);
-	}
 	
 	public void deleteUser (Long id) {
 		User user =userRepository.findById(id)

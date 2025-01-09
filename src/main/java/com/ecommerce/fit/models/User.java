@@ -12,7 +12,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,10 +35,6 @@ public class User {
 	
     @Column(name = "email", nullable = false, unique = true)
     private String email;
-    
-    @Column(name = "password",nullable = false)
-    @Size(min = 6, max = 20, message = "A senha deve ter entre 6 e 20 caracteres.")
-    private String password;
     
     @JsonIgnore
 	@OneToMany(mappedBy = "user")
