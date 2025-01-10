@@ -15,6 +15,7 @@ import com.ecommerce.fit.models.Product;
 import com.ecommerce.fit.models.User;
 import com.ecommerce.fit.models.pk.OrderItemPK;
 import com.ecommerce.fit.record.OrderRequest;
+import com.ecommerce.fit.record.UpdateOrderRequest;
 import com.ecommerce.fit.repositories.OrderItemRepository;
 import com.ecommerce.fit.repositories.OrderRepository;
 import com.ecommerce.fit.repositories.ProductRepository;
@@ -79,10 +80,10 @@ public class OrderService {
 	                .orElseThrow(() -> new RuntimeException("Order not found with ID: " + id));
 	    }
 
-	    public void updateOrderStatus(Long id) {
+	    public void updateOrderStatus(Long id, UpdateOrderRequest updateOrderRequest) {
 	        Order existingOrder = orderRepository.findById(id)
 	                .orElseThrow(() -> new RuntimeException("Order not found with ID: " + id));
-	        existingOrder.setOrderStatus(existingOrder.getOrderStatus());
+	        existingOrder.setOrderStatus(updateOrderRequest.status());
 	        orderRepository.save(existingOrder);
 	    }
 
