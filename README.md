@@ -36,4 +36,4 @@ Este projeto foi desenvolvido em **Java**, utilizando boas práticas de programa
 
 Aqui está um exemplo da documentação da API do sistema de e-commerce:
 
-![Documentação da API](C:\Users\Public\Pictures/api-doc.png)
+![Documentação da API]<blockquote class="imgur-embed-pub" lang="en" data-id="a/LfACkHb" data-context="false" ><a href="//imgur.com/a/LfACkHb"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
