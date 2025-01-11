@@ -30,3 +30,10 @@ Este projeto foi desenvolvido em **Java**, utilizando boas práticas de programa
 
 ### Integrações:
 - **Mercado Pago**: API para gerenciar pagamentos de forma simples e segura.
+---
+
+## 📝 Documentação da API
+
+Aqui está um exemplo da documentação da API do sistema de e-commerce:
+
+![Documentação da API](./Imagens/api-doc.png)
