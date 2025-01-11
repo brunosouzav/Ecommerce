@@ -36,4 +36,4 @@ Este projeto foi desenvolvido em **Java**, utilizando boas práticas de programa
 
 Aqui está um exemplo da documentação da API do sistema de e-commerce:
 
-![Documentação da API] https://imgur.com/a/LfACkHb
+Documentação: https://imgur.com/a/LfACkHb
